@@ -1,5 +1,6 @@
 
 <?php
+
 if ($year==''&&is_null($_POST["year"])) {
 $year=date(Y, time ());
 }
@@ -15,19 +16,21 @@ else{
 }
 $month_text = date(F,mktime(0,0,0,$month,1,$year));
 $selected=strftime ("%B",mktime(0,0,0,$month,1,$year));
-echo "<center><form action=cele.php method=post><select name=month>\n";
+
+echo "<center><form action=index.php method=post><select name=month>\n";
 $monthArray = array("","January",
-"February",
-"March",
-"April",
-"May",
-"June",
-"July",
-"August",
-"September",
-"October",
-"November", 
-"December"); 
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November", 
+  "December"
+); 
 foreach ($monthArray as $key => $value) {
   if($value!=""){
     if(intval($month) == $key ){ 
@@ -107,7 +110,7 @@ while($counter<=$lastday){
 $day=mktime(0,0,0,$month,$counter,$year);
 $day_of_week=date(l,$day);
 if($day_of_week == 'Sunday'){echo "<tr>\n";}
-echo "<td>$counter</td>\n";
+echo "<td id=$counter class='date'>$counter</td>\n";
 if($day_of_week == 'Saturday') {echo "</tr>\n";}
 $counter++; 
 }
