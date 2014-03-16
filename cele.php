@@ -77,11 +77,12 @@ $firstday = mktime(0,0,0,$month,1,$year);
 $day_of_week = date(l, $firstday);
 echo "<tr>\n";
 
-
+echo "<h1>$day_of_week</h1>";
 switch ($day_of_week) {
 
 case 'Monday':
-echo str_repeat("<td></td>",l);
+
+echo "<td></td>";
 break; 
 
 case 'Tuesday':
