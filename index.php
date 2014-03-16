@@ -5,7 +5,7 @@
 
 <body>
 
-  <? include 'cele.php';?>
+  <? include './cele.php';?>
   
 
 </body>
