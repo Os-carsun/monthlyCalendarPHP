@@ -104,14 +104,14 @@ break;
 case 'Saturday':
 echo str_repeat("<td></td>",6);
 }
-
+$weekArray = $arrayName = array("",'Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday');
 
 $counter=1; 
 while($counter<=$lastday){ 
 $day=mktime(0,0,0,$month,$counter,$year);
 $day_of_week=date(l,$day);
 if($day_of_week == 'Sunday'){echo "<tr>\n";}
-echo "<td id=$counter class='date'>$counter</td>\n";
+echo "<td id=$counter class='date $day_of_week'>$counter</td>\n";
 if($day_of_week == 'Saturday') {echo "</tr>\n";}
 $counter++; 
 }
